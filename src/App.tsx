@@ -1,9 +1,6 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useEffect, useState } from 'react'
 import BackgroundConfigCard from './core/components/BackgroundConfigCard'
-import PostProcessingConfigCard from './core/components/PostProcessingConfigCard'
-import SegmentationConfigCard from './core/components/SegmentationConfigCard'
-import SourceConfigCard from './core/components/SourceConfigCard'
 import ViewerCard from './core/components/ViewerCard'
 import {
   BackgroundConfig,
@@ -18,7 +15,7 @@ import useTFLite from './core/hooks/useTFLite'
 function App() {
   const classes = useStyles()
   const [sourceConfig, setSourceConfig] = useState<SourceConfig>({
-    type: 'image',
+    type: 'camera',
     url: sourceImageUrls[0],
   })
   const [backgroundConfig, setBackgroundConfig] = useState<BackgroundConfig>({
@@ -65,12 +62,12 @@ function App() {
         bodyPix={bodyPix}
         tflite={tflite}
       />
-      <SourceConfigCard config={sourceConfig} onChange={setSourceConfig} />
+      {/* <SourceConfigCard config={sourceConfig} onChange={setSourceConfig} /> */}
       <BackgroundConfigCard
         config={backgroundConfig}
         onChange={setBackgroundConfig}
       />
-      <SegmentationConfigCard
+      {/* <SegmentationConfigCard
         config={segmentationConfig}
         isSIMDSupported={isSIMDSupported}
         onChange={setSegmentationConfig}
@@ -79,7 +76,7 @@ function App() {
         config={postProcessingConfig}
         pipeline={segmentationConfig.pipeline}
         onChange={setPostProcessingConfig}
-      />
+      /> */}
     </div>
   )
 }
