@@ -1,5 +1,4 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
 import { BodyPix } from '@tensorflow-models/body-pix'
 import { useEffect } from 'react'
 import { BackgroundConfig } from '../helpers/backgroundHelper'
@@ -109,9 +108,10 @@ function OutputViewer(props: OutputViewerProps) {
         width={props.sourcePlayback.width}
         height={props.sourcePlayback.height}
       />
-      <Typography className={classes.stats} variant="caption">
+      {/* <Typography className={classes.stats} variant="caption">
         {stats}
-      </Typography>
+      </Typography> */}
+      {/* hide stats */}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import VideocamOffIcon from '@material-ui/icons/VideocamOff'
-import React, { SyntheticEvent, useEffect, useRef, useState } from 'react'
+import { SyntheticEvent, useEffect, useRef, useState } from 'react'
 import { SourceConfig, SourcePlayback } from '../helpers/sourceHelper'
 
 type SourceViewerProps = {

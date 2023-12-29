@@ -1,6 +1,7 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { useEffect, useState } from 'react'
 import BackgroundConfigCard from './core/components/BackgroundConfigCard'
+import SourceConfigCard from './core/components/SourceConfigCard'
 import ViewerCard from './core/components/ViewerCard'
 import {
   BackgroundConfig,
@@ -15,7 +16,7 @@ import useTFLite from './core/hooks/useTFLite'
 function App() {
   const classes = useStyles()
   const [sourceConfig, setSourceConfig] = useState<SourceConfig>({
-    type: 'camera',
+    type: 'image',
     url: sourceImageUrls[0],
   })
   const [backgroundConfig, setBackgroundConfig] = useState<BackgroundConfig>({
@@ -62,7 +63,7 @@ function App() {
         bodyPix={bodyPix}
         tflite={tflite}
       />
-      {/* <SourceConfigCard config={sourceConfig} onChange={setSourceConfig} /> */}
+      <SourceConfigCard config={sourceConfig} onChange={setSourceConfig} />
       <BackgroundConfigCard
         config={backgroundConfig}
         onChange={setBackgroundConfig}
@@ -77,6 +78,7 @@ function App() {
         pipeline={segmentationConfig.pipeline}
         onChange={setPostProcessingConfig}
       /> */}
+      {/* hide components */}
     </div>
   )
 }
